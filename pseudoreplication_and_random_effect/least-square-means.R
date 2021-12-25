@@ -4,7 +4,7 @@ yieldData <- read.table("./yieldData.dat", header = TRUE)
 library(lme4)
 lmer.m <- lmer(Yield ~ Treatment + (1|Plot), yieldData)
 
-library(lsmeans)
+library(emmeans)
 print(lsm.lmer.m <- lsmeans(lmer.m, specs="Treatment"))
 
 # Loading required package: emmeans
